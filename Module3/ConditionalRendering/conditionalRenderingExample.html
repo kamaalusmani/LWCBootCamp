@@ -6,17 +6,17 @@
   @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
   Modifications Log 
   Ver   Date         Author                               Modification
-  1.0   11-17-2020   Kamaal Ahmad Usmani                  Initial Version
+  1.0   11-18-2020   Kamaal Ahmad Usmani                  Initial Version
 -->
 <template>
-   <lightning-card  title="Lightning Web Component">
-    <div>
-        <ul class="slds-list_dotted">
-            <li class="listItem1">Hello World</li>
-            <li class="listItem2">This is my first Lightning Component</li>
-            <li class="listItem3">I'm so excited to be part of this Bootcamp</li>
-        </ul>
-    </div>
-    <p slot="footer">LWC Bootcamp</p>
+    <lightning-card title="Conditional Rendering" icon-name="custom:custom19">
+        <template if:true={showTemplateOne}>
+            <img src={firstImage} alt="Tom Image" />
+            <lightning-button variant="brand" label="Show Tom" title="Primary action" onclick={switchImages} class="slds-m-left_x-small"></lightning-button>
+        </template>
+        <template if:false={showTemplateOne}>
+            <img src={secondImage} alt="Jerry Image" />
+            <lightning-button variant="brand" label="Show Jerry" title="Primary action" onclick={switchImages} class="slds-m-left_x-small"></lightning-button>
+        </template>
     </lightning-card>
 </template>
