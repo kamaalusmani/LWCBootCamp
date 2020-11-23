@@ -1,0 +1,48 @@
+<!--
+  @description       : 
+  @author            : Kamaal Ahmad Usmani
+  @group             : 
+  @last modified on  : 11-23-2020
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+  Modifications Log 
+  Ver   Date         Author                               Modification
+  1.0   11-21-2020   Kamaal Ahmad Usmani                  Initial Version
+
+  This code calculates expression while following BODMAS rules
+-->
+<template>
+	<div class="cardWidth">
+    <lightning-card title="Calculator" icon-name="custom:custom19">
+			<div class="slds-box slds-theme_default">
+					<h1>Enter Expression</h1>
+					<div class="slds-box" id="result">{result}</div>
+					<h1>Result</h1>
+					<div class="slds-box" id="partialresult">{partialresult}</div>
+					<div class="divMargin">
+							<lightning-button label="1" title="Non-primary action" onclick={handleClick} id="num1" class="slds-m-left_x-small"></lightning-button>
+							<lightning-button label="2" title="Non-primary action" onclick={handleClick} id="num2" class="slds-m-left_x-small"></lightning-button>
+							<lightning-button label="3" title="Non-primary action" onclick={handleClick} id="num3" class="slds-m-left_x-small"></lightning-button>
+							<lightning-button-icon icon-name="utility:add" onclick={handleSymbolClick} class="slds-m-left_x-small"  alternative-text="Add" title="+"></lightning-button-icon></br>
+					</div>
+					<div class="divMargin">
+							<lightning-button label="4" title="Non-primary action" onclick={handleClick} id="num4" class="slds-m-left_x-small"></lightning-button>
+							<lightning-button label="5" title="Non-primary action" onclick={handleClick} id="num5" class="slds-m-left_x-small"></lightning-button>
+							<lightning-button label="6" title="Non-primary action" onclick={handleClick} id="num6" class="slds-m-left_x-small"></lightning-button>
+							<lightning-button-icon icon-name="utility:dash" onclick={handleSymbolClick} class="slds-m-left_x-small" id="sub" alternative-text="Sub" title="-"></lightning-button-icon></br>
+					</div>
+					<div class="divMargin">
+						<lightning-button label="7" title="Non-primary action" onclick={handleClick}  id="num7" class="slds-m-left_x-small"></lightning-button>
+						<lightning-button label="8" title="Non-primary action" onclick={handleClick} id="num8" class="slds-m-left_x-small"></lightning-button>
+						<lightning-button label="9" title="Non-primary action" onclick={handleClick} id="num9" class="slds-m-left_x-small"></lightning-button>
+						<lightning-button-icon icon-name="utility:frozen"  onclick={handleSymbolClick} class="slds-m-left_x-small" id="mul" alternative-text="Mul" title="*"></lightning-button-icon></br>
+					</div>
+					<div class="divMargin">
+						<lightning-button variant="destructive-text" label="C" onclick={clearInput} id="clear" class="slds-m-left_x-small"></lightning-button>
+						<lightning-button label="0" title="Non-primary action" onclick={handleClick} id="num0" class="slds-m-left_x-small"></lightning-button>
+						<lightning-button label="=" title="Non-primary action" onclick={handleResult} id="equal"  class="slds-m-left_x-small"></lightning-button>
+						<lightning-button-icon icon-name="utility:italic"  onclick={handleSymbolClick} class="slds-m-left_x-small" id="div"  alternative-text="Div" title="/"></lightning-button-icon>
+					</div>
+			</div>
+    </lightning-card>
+	</div>
+</template>
