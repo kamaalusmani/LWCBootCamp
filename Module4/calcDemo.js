@@ -16,18 +16,21 @@ export default class CalcDemo extends LightningElement {
     					}
 				}				
 		}
+
 		handleSymbolClick(event){
                 let textValue=event.target.title;
                 this.result=this.result+textValue;
 		}
+
 		clearInput(event){
-            this.result='';
+            		this.result='';
 			this.partialresult='';
 						
 		}
+
 		handleResult(event){
 			try {
-    			this.result=eval(this.result);
+    				this.result=eval(this.result);
 			}catch(e) {
    					if (e instanceof SyntaxError) {
         				this.result="Invalid Expression";
