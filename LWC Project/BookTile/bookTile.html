@@ -1,0 +1,56 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 12-07-2020
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+  Modifications Log 
+  Ver   Date         Author                               Modification
+  1.0   12-07-2020   ChangeMeIn@UserSettingsUnder.SFDoc   Initial Version
+-->
+<template>
+		<template if:true={book.Id}>
+    <a onclick={handleBookSelect}>
+        <div class={isBookSelected}>
+						<div>
+                <p class="title">
+									{book.Name}
+                </p>
+            </div>
+            <img src={book.ImageUrl__c} class="car" alt="Book Picture" >
+						<div class="slds-text-body_small">
+							ISBN:{book.ISBN__c}
+						</div>
+						<div class="slds-text-body_small">
+							ISBN13:{book.ISBN13__c}
+						</div>
+						<div class="slds-text-body_small">
+							No. of Page:{book.Numberofpages__c}
+						</div>
+						<div class="slds-text-body_small">
+							Publisher:{book.PublishedYear__c}
+						</div>
+						<div class="slds-text-body_small">
+							Author:{book.Author__c}
+						</div>
+        </div>
+    </a>
+		</template>
+		<template if:false={book.Id}>
+				<lightning-card>
+						<div slot="actions">
+										<lightning-button label="Add Book" data-id={book.Goodreads__c} data-name={book.Name} data-author={book.Author__c} data-image={book.ImageUrl__c} onclick={createBookRecord}></lightning-button>
+						 </div>
+						<div>
+                <p class="title">
+									{book.Name}
+                </p>
+            </div>
+						<img src={book.ImageUrl__c} class="car" alt="Book Picture" >
+						<div class="slds-text-body_small">
+							Author:{book.Author__c}
+						</div>
+				</lightning-card>
+		</template>
+		
+</template>
