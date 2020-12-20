@@ -1,0 +1,57 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 12-07-2020
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+  Modifications Log 
+  Ver   Date         Author                               Modification
+  1.0   12-07-2020   ChangeMeIn@UserSettingsUnder.SFDoc   Initial Version
+-->
+<template>
+    <lightning-card title={bookName} icon-name="utility:setup_assistant_guide">
+        <div slot="actions">
+            <lightning-button label="Update Book Details" onclick={navigateToBookEdit}></lightning-button>
+						<lightning-button label="Delete" onclick={deleteRecord}></lightning-button>
+        </div>
+
+        <lightning-layout multiple-rows>
+            <lightning-layout-item size="12" small-device-size="6" medium-device-size="6" large-device-size="6">
+                <div class="slds-p-horizontal_small">
+                    <div class="carproperty">
+                        <span class="label">Book Name:</span>
+                        <lightning-formatted-text value={bookName}></lightning-formatted-text>
+                    </div>
+                    <div class="carproperty">
+                        <span class="label">Author Name:</span>
+                        <lightning-formatted-text value={authorName}> </lightning-formatted-text>
+                    </div>
+                    <div class="carproperty">
+                        <span class="label">Publisher Name:</span>
+                        <lightning-formatted-text value={publisherName}> </lightning-formatted-text>
+                    </div>
+                    <div class="carproperty">
+                        <span class="label">ISBN:</span>
+                        <lightning-formatted-number value={bookIsbn} ></lightning-formatted-number>
+                    </div>
+                    <div class="carproperty">
+                        <span class="label">Published Year:</span>
+                        <lightning-formatted-number value={publishedYear}></lightning-formatted-number>
+                    </div>
+                    <div class="carproperty">
+                        <span class="label">Average Rating:</span>
+                        <lightning-formatted-number value={bookRating}></lightning-formatted-number>
+                    </div>
+                    <div class="carproperty">
+                        <span class="label">Binding:</span>
+                        <lightning-formatted-text value={bookBinding}> </lightning-formatted-text>
+                    </div>
+                </div>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" small-device-size="6" medium-device-size="6" large-device-size="6">
+
+                <img src={pictureUrl} class="car slds-align_absolute-center imageview" alt="Book Picture" />
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>
