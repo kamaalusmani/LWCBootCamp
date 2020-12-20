@@ -1,0 +1,29 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 12-07-2020
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+  Modifications Log 
+  Ver   Date         Author                               Modification
+  1.0   12-07-2020   ChangeMeIn@UserSettingsUnder.SFDoc   Initial Version
+-->
+<template>
+    <lightning-card title="Matching Books" class="slds-box" >
+        <lightning-layout multiple-rows horizontal-align="center">
+            <template if:true={BooksFound}>
+                <template for:each={books} for:item="book">
+                    <lightning-layout-item key={book.Id} padding="around-small" size="12" small-device-size="6"
+                        large-device-size="3" medium-device-size="4">
+                        <c-book-tile book={book} onbookselect={bookSelectHandler} book-selected-id={selectedBookId}></c-book-tile>
+                    </lightning-layout-item>
+                </template>
+            </template>
+            <template if:false={BooksFound}>
+                <div class="slds-align_absolute-center">
+                    No Books Found
+                </div>
+            </template>
+        </lightning-layout>
+    </lightning-card>
+</template>
