@@ -1,0 +1,19 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 12-07-2020
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+  Modifications Log 
+  Ver   Date         Author                               Modification
+  1.0   12-07-2020   ChangeMeIn@UserSettingsUnder.SFDoc   Initial Version
+-->
+<template>
+    <template if:true={bookFound}>
+        <lightning-layout multiple-rows>
+            <lightning-layout-item size="12">
+                <c-book-detail book={book} ></c-book-detail>
+            </lightning-layout-item>
+        </lightning-layout>
+    </template>
+</template>
