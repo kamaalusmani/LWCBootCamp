@@ -18,6 +18,8 @@ export default class BookDetail extends NavigationMixin(LightningElement) {
         });
     }
 	deleteRecord(event) {
+	var result = confirm(this.book.data.fields.Id.value+"\nPress a button!\nEither OK or Cancel.");
+  		if (result === true) {
         deleteRecord(this.book.data.fields.Id.value)
             .then(() => {
                 this.dispatchEvent(
@@ -37,6 +39,7 @@ export default class BookDetail extends NavigationMixin(LightningElement) {
                     })
                 );
             });
+			}
     }
 		
 		navigateToBookEdit() {
